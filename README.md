@@ -1,4 +1,4 @@
-# [SDF06] Project: Mobile App
+# [SDF10] Project: Mobile App
 
 # Project Brief: Build a Mobile App with Firebase
 
@@ -35,7 +35,7 @@ This guide will walk you through the process of forking the Shopping Cart Mobile
 
 Forking allows you to have a personal copy of the project on their GitHub account, which you can then clone to your local machine, make changes, commit, and push back to your forked version without affecting the original repository.
 
-1. **Navigate to the Repository:** Go to the SDF06 GitHub repository. Look for a button labeled **Fork** in the top-right corner of the page.
+1. **Navigate to the Repository:** Go to the GitHub repository. Look for a button labeled **Fork** in the top-right corner of the page.
 2. **Fork the Repository:** Click the **Fork** button. This creates a copy of the repository in your own GitHub account, allowing you to make changes without affecting the original code.
 
 ### Step 2: Clone Your Forked Repository
