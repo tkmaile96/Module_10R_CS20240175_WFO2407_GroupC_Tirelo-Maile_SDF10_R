@@ -1,4 +1,49 @@
+/*--Basic styling --*/
+
 html, body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+    background-color: aliceblue;
 }
+
+/*-- Input element --*/
+input {
+    color: #cdd3d3;
+    background-color: #dce1eb;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: medium;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/*-- Button -- */
+
+button {
+    color: #fdfdfd;
+    background-color: #ac485a;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: medium;
+    text-align: center;
+}
+
+/*-- Container --*/
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    background-color: #fff;
+    margin: 30px auto;
+
+}
+
+/*-- Image --*/
+ img {
+    width: 200px;
+    margin: 0 auto;
+ }
