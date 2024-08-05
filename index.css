@@ -51,3 +51,20 @@ transform: translateY(-5px);
     width: 200px;
     margin: 0 auto;
  }
+
+ /*-- List --*/
+ ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 10px;
+ }
+
+ ul li {
+    background-color: #e0dada;
+    padding: 15px;
+    border-radius: 5px;
+    flex-grow: 1;
+    text-align: center;
+ }
