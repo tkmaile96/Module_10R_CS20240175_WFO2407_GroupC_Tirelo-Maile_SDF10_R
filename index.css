@@ -3,19 +3,19 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background-color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #959090;
     user-select: none;
 }
 
 /*-- Input element --*/
 input {
-    color: #374040;
-    background-color: #dce1eb;
+    color: #b3c4c4;
+    background-color: #3d4149;
     border: none;
     padding: 15px;
     border-radius: 4px;
-    font-size: medium;
+    font-size: large;
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -26,7 +26,7 @@ input {
 
 button {
     color: #fdfdfd;
-    background-color: #640618;
+    background-color: #5a4006;
     border: none;
     padding: 15px;
     border-radius: 4px;
@@ -36,13 +36,13 @@ button {
     margin: 0 15px 15px;
 }
 button:hover{
-background-color: #f04967;
+background-color: #14c1fa;
 transform: translateY(-5px);
 }
 
 /*-- Container --*/
 .container {
-    border: 3px solid #000;
+    border: 3px solid #efaa0a;
     display: flex;
     flex-direction: column;
     max-width: 320px;
