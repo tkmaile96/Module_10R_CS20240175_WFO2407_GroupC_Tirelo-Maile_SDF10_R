@@ -3,7 +3,7 @@ Challenge:
 Make it so that when you click the 'Add to cart' button, whatever is written in the input field should be console logged.
 */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 // my database URl
 const appSettings = {
@@ -68,5 +68,12 @@ function appendItems(item) {
     let newElement = document.createElement("li") //create a list element
 
     newElement.textContent = itemValue;
+
+    newElement.addEventListener("click", function() {
+       
+        let exactLocationOfItem = ref(database, `items/${itemID}`);
+        remove(exactLocationOfItem);
+    })
+
     listItemsEl.append(newElement);
 }
