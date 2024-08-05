@@ -30,6 +30,10 @@ button {
     border-radius: 4px;
     font-size: medium;
     text-align: center;
+    cursor: pointer;
+}
+button:hover{
+transform: translateY(-5px);
 }
 
 /*-- Container --*/

@@ -6,11 +6,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/fireba
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js"
 
 const firebaseConfig = {
-   databaseURL: process.env.DATABASE_URL
+   databaseURL: "https://sdf10-f1c24-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const itemsInApp = ref(database, "items")
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
