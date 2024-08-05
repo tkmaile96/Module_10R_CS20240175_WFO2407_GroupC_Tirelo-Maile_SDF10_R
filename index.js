@@ -27,9 +27,18 @@ addButtonEl.addEventListener("click", function() {
 
     push(itemsInApp, inputValue); //push my items to the database
 
-    inputFieldEl.value = "";
+    clearInputFieldEl();
 
-    listItemsEl.innerHTML += `<li>${inputValue}</li>` // list of items on my database
+    appendItems(inputValue);
+    
   
 });
 
+//funtion to clear the input value after addind an item
+function clearInputFieldEl() {
+    inputFieldEl.value = "";
+};
+
+function appendItems(itemValue) {
+    listItemsEl.innerHTML += `<li>${itemValue}</li>` // list of items on my database
+}
