@@ -2,22 +2,34 @@
 Challenge:
 Make it so that when you click the 'Add to cart' button, whatever is written in the input field should be console logged.
 */
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
-const firebaseConfig = {
-   databaseURL: "https://sdf10-f1c24-default-rtdb.europe-west1.firebasedatabase.app/"
-}
+// my database URl
+const appSettings = {
+    databaseURL: "https://sdf10-f1c24-default-rtdb.europe-west1.firebasedatabase.app/"
+};
+ 
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(appSettings);
 const database = getDatabase(app);
-const itemsInApp = ref(database, "items")
+const itemsInApp = ref(database, "items"); // link my items to the database
 
-const inputFieldEl = document.getElementById("input-field")
-const addButtonEl = document.getElementById("add-button")
+
+// DOM 
+const inputFieldEl = document.getElementById ("input-field");
+const addButtonEl = document.getElementById("add-button");
+const listItemsEl = document.getElementById("list-items");
 
 addButtonEl.addEventListener("click", function() {
-    let inputValue = inputFieldEl.value
-    
-    console.log(inputValue)
-})
+
+    let inputValue = inputFieldEl.value;
+
+    push(itemsInApp, inputValue); //push my items to the database
+
+    inputFieldEl.value = "";
+
+    listItemsEl.innerHTML += `<li>${inputValue}</li>` // list of items on my database
+  
+});
+
