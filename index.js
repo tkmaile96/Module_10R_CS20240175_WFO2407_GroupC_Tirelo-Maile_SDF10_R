@@ -29,7 +29,6 @@ addButtonEl.addEventListener("click", function() {
 
     clearInputFieldEl();
 
-    appendItems(inputValue);
     
   
 });
@@ -38,12 +37,20 @@ addButtonEl.addEventListener("click", function() {
 onValue(itemsInApp, function(snapshot) {
 let itemsArray = Object.values(snapshot.val()) // An array for my items
 
+clearListItems() // clear item list function
+
 // For loops
 for (let i = 0; i  < itemsArray.length; i++) {
    
     appendItems(itemsArray[i])
 }
 });  
+
+// function to clear my item list
+function clearListItems() {
+    listItemsEl.innerHTML = "";
+
+}
 
 //funtion to clear the input value after addind an item
 function clearInputFieldEl() {
