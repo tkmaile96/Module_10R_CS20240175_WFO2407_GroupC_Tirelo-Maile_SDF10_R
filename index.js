@@ -3,7 +3,7 @@ Challenge:
 Make it so that when you click the 'Add to cart' button, whatever is written in the input field should be console logged.
 */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 // my database URl
 const appSettings = {
@@ -34,11 +34,23 @@ addButtonEl.addEventListener("click", function() {
   
 });
 
+//Fetching items from the database
+onValue(itemsInApp, function(snapshot) {
+let itemsArray = Object.values(snapshot.val()) // An array for my items
+
+// For loops
+for (let i = 0; i  < itemsArray.length; i++) {
+   
+    appendItems(itemsArray[i])
+}
+});  
+
 //funtion to clear the input value after addind an item
 function clearInputFieldEl() {
     inputFieldEl.value = "";
 };
 
+//function to append/Add items to my app
 function appendItems(itemValue) {
     listItemsEl.innerHTML += `<li>${itemValue}</li>` // list of items on my database
 }
