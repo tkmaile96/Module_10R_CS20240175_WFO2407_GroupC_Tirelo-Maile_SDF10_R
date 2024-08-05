@@ -35,15 +35,18 @@ addButtonEl.addEventListener("click", function() {
 
 //Fetching items from the database
 onValue(itemsInApp, function(snapshot) {
-let itemsArray = Object.values(snapshot.val()) // An array for my items
+let itemsArray = Object.entries(snapshot.val()) // An array for my items,use keys for IDs, Entries for both IDs and Values
 
 clearListItems() // clear item list function
 
 // For loops
 for (let i = 0; i  < itemsArray.length; i++) {
-   
-    appendItems(itemsArray[i])
-}
+   let currentItem = itemsArray[i];
+   let currentItemID = currentItem[0];
+   let currentItemValue = currentItem[1];
+
+    appendItems(currentItem);
+};
 });  
 
 // function to clear my item list
@@ -58,6 +61,12 @@ function clearInputFieldEl() {
 };
 
 //function to append/Add items to my app
-function appendItems(itemValue) {
-    listItemsEl.innerHTML += `<li>${itemValue}</li>` // list of items on my database
+function appendItems(item) {
+
+    let itemID = item[0];
+    let itemValue = item[1];
+    let newElement = document.createElement("li") //create a list element
+
+    newElement.textContent = itemValue;
+    listItemsEl.append(newElement);
 }
